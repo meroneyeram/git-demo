@@ -1,5 +1,6 @@
 const Proudct = require("../models/product.js");
 
+// product controllers
 exports.addProduct = async (req, res) => {
   try {
     const product = await Proudct.create(req.body);
