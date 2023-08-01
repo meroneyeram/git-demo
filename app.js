@@ -1,3 +1,4 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -15,10 +16,11 @@ app.use((err, req, res, next) => {
 });
 
 try {
-  mongoose.connect("mongodb://127.0.0.1:27017/mystoredb");
+  mongoose.connect(process.env.MONGO_URI + "/" + process.env.DB_NAME);
   console.log("connected to db");
 } catch (err) {
   console.log("db error");
 }
 
-app.listen(8000, () => console.log("listening on port 8000"));
+const port = process.env.PORT || 8000;
+app.listen(port, () => console.log("listening on port 8000"));

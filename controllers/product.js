@@ -3,7 +3,7 @@ const Proudct = require("../models/product.js");
 exports.addProduct = async (req, res) => {
   try {
     const product = await Proudct.create(req.body);
-    res.status(201).send(product);
+    res.status(201).json({ proudct: product });
   } catch (error) {
     res.send(error);
   }
@@ -12,7 +12,7 @@ exports.addProduct = async (req, res) => {
 exports.getAllProducts = async (req, res) => {
   try {
     const products = await Proudct.find();
-    res.status(200).send(products);
+    res.status(200).json({ proudcts: products });
   } catch (error) {
     res.send(error);
   }
