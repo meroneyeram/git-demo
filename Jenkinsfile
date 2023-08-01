@@ -4,6 +4,7 @@ pipeline {
     stage("bulid") {
       steps {
         echo 'building the application'
+        echo 'application being updated'
       }
     }
 
