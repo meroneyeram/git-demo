@@ -6,9 +6,9 @@ pipeline {
         echo 'execute npm'
         nodejs('Node-18.16'){
           sh 'npm --version'
+        } 
       }
-    }
+    }  
 
-  }  
-
+  }
 }
